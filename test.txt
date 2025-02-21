@@ -1,0 +1,134 @@
+using System.IO;
+using System.Xml.Serialization;
+
+public class XmlSerializationStrategy : ISerializationStrategy
+{
+    public string Serialize(ISerializableObject obj)
+    {
+        XmlSerializer serializer = new XmlSerializer(typeof(SerializableObject));
+        using (StringWriter writer = new StringWriter())
+        {
+            serializer.Serialize(writer, obj);
+            return writer.ToString();
+        }
+    }
+
+    public ISerializableObject Deserialize(string data)
+    {
+        XmlSerializer serializer = new XmlSerializer(typeof(SerializableObject));
+        using (StringReader reader = new StringReader(data))
+        {
+            return (SerializableObject)serializer.Deserialize(reader);
+        }
+    }
+}
+
+
+
+
+
+
+using Google.Protobuf;
+
+public class ProtoBufSerializationStrategy : ISerializationStrategy
+{
+    public string Serialize(ISerializableObject obj)
+    {
+        // Преобразование к типу, который поддерживает Protobuf
+        var protoObj = new ProtoSerializableObject
+        {
+            Name = obj.Name,
+            Age = obj.Age,
+            Salary = obj.Salary,
+            Scores = { obj.Scores },
+            Skills = { obj.Skills }
+        };
+
+        return protoObj.ToString();
+    }
+
+    public ISerializableObject Deserialize(string data)
+    {
+        // Преобразование строки обратно в объект, поддерживающий Protobuf
+        var protoObj = ProtoSerializableObject.Parser.ParseFrom(data);
+        return new SerializableObject
+        {
+            Name = protoObj.Name,
+            Age = protoObj.Age,
+            Salary = protoObj.Salary,
+            Scores = new Dictionary<string, int>(protoObj.Scores),
+            Skills = new List<string>(protoObj.Skills)
+        };
+    }
+}
+
+
+
+using Avro.Generic;
+using Avro.IO;
+using Avro.Specific;
+using AvroReflect = Avro.Reflect;
+using System.IO;
+
+public class AvroSerializationStrategy : ISerializationStrategy
+{
+    public string Serialize(ISerializableObject obj)
+    {
+        var schema = AvroReflect.ReflectData.GetSchema(typeof(SerializableObject));
+        var writer = new GenericWriter<SerializableObject>(schema);
+        using (var stream = new MemoryStream())
+        {
+            writer.Write(obj, new BinaryEncoder(stream));
+            return Convert.ToBase64String(stream.ToArray());
+        }
+    }
+
+    public ISerializableObject Deserialize(string data)
+    {
+        var schema = AvroReflect.ReflectData.GetSchema(typeof(SerializableObject));
+        var reader = new GenericReader<SerializableObject>(schema, schema);
+        using (var stream = new MemoryStream(Convert.FromBase64String(data)))
+        {
+            return reader.Read(new BinaryDecoder(stream), new SerializableObject());
+        }
+    }
+}
+
+
+
+
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        ISerializableObject obj = new SerializableObject
+        {
+            Name = "John Doe",
+            Age = 30,
+            Salary = 1000.5f,
+            Scores = new Dictionary<string, int> { { "Math", 90 }, { "English", 80 } },
+            Skills = new List<string> { "C#", "Java", "Python" }
+        };
+
+        // JSON тест
+        var jsonTester = new SerializationTester(new JsonSerializationStrategy());
+        jsonTester.TestSerialization(obj);
+
+        // XML тест
+        var xmlTester = new SerializationTester(new XmlSerializationStrategy());
+        xmlTester.TestSerialization(obj);
+
+        // ProtoBuf тест
+        var protoBufTester = new SerializationTester(new ProtoBufSerializationStrategy());
+        protoBufTester.TestSerialization(obj);
+
+        // Avro тест
+        var avroTester = new SerializationTester(new AvroSerializationStrategy());
+        avroTester.TestSerialization(obj);
+    }
+}
+
+
+dotnet add package Newtonsoft.Json
