@@ -39,8 +39,24 @@ class Program
             jsonTester.TestSerialization(obj)
         };
 
+        // нативная бинарная сериализация тест
+        var binTester = new SerializationTester(new BinarySerializationStrategy(), "BIN");
+        var binResults = new List<SerializationResult>
+        {
+            binTester.TestSerialization(obj)
+        };
+
+        // xml сериализация тест
+        var xmlTester = new SerializationTester(new XmlSerializationStrategy(), "BIN");
+        var xmlResults = new List<SerializationResult>
+        {
+            xmlTester.TestSerialization(obj)
+        };
+
         // Сохранение результатов в Excel
         jsonTester.SaveResultsToExcel(jsonResults, "serialization_results.xlsx");
+        binTester.SaveResultsToExcel(binResults, "serialization_results.xlsx");
+        xmlTester.SaveResultsToExcel(xmlResults, "serialization_results.xlsx");
 
         Console.WriteLine("Результаты сохранены в файл 'serialization_results.xlsx'");
     }

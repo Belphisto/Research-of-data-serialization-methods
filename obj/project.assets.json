@@ -80,6 +80,19 @@
           }
         }
       },
+      "Google.Protobuf/3.29.3": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/Google.Protobuf.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0/Google.Protobuf.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "Newtonsoft.Json/13.0.3": {
         "type": "package",
         "compile": {
@@ -238,6 +251,29 @@
         "lib/netstandard2.0/ExcelNumberFormat.xml"
       ]
     },
+    "Google.Protobuf/3.29.3": {
+      "sha512": "t7nZFFUFwigCwZ+nIXHDLweXvwIpsOXi+P7J7smPT/QjI3EKxnCzTQOhBqyEh6XEzc/pNH+bCFOOSjatrPt6Tw==",
+      "type": "package",
+      "path": "google.protobuf/3.29.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "google.protobuf.3.29.3.nupkg.sha512",
+        "google.protobuf.nuspec",
+        "lib/net45/Google.Protobuf.dll",
+        "lib/net45/Google.Protobuf.pdb",
+        "lib/net45/Google.Protobuf.xml",
+        "lib/net5.0/Google.Protobuf.dll",
+        "lib/net5.0/Google.Protobuf.pdb",
+        "lib/net5.0/Google.Protobuf.xml",
+        "lib/netstandard1.1/Google.Protobuf.dll",
+        "lib/netstandard1.1/Google.Protobuf.pdb",
+        "lib/netstandard1.1/Google.Protobuf.xml",
+        "lib/netstandard2.0/Google.Protobuf.dll",
+        "lib/netstandard2.0/Google.Protobuf.pdb",
+        "lib/netstandard2.0/Google.Protobuf.xml"
+      ]
+    },
     "Newtonsoft.Json/13.0.3": {
       "sha512": "HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
       "type": "package",
@@ -337,6 +373,7 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "ClosedXML >= 0.104.2",
+      "Google.Protobuf >= 3.29.3",
       "Newtonsoft.Json >= 13.0.3"
     ]
   },
@@ -387,6 +424,10 @@
           "ClosedXML": {
             "target": "Package",
             "version": "[0.104.2, )"
+          },
+          "Google.Protobuf": {
+            "target": "Package",
+            "version": "[3.29.3, )"
           },
           "Newtonsoft.Json": {
             "target": "Package",

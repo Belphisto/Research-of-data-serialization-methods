@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+message SerializableObjectProto {
+    string Login = 1;
+    int32 CountInventory = 2;
+    float Coin = 3;
+    repeated InventoryItem Inventory = 4;
+    repeated string PartyLogins = 5;
+}
+
+message InventoryItem {
+    string Key = 1;
+    int32 Value = 2;
+}

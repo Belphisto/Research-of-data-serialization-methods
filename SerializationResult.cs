@@ -4,5 +4,5 @@ public class SerializationResult
     public TimeSpan SerializationTime { get; set; }
     public TimeSpan DeserializationTime { get; set; }
     public string SerializedData { get; set; }
-        public string SerializationFormat { get; set; } // Хранение формата
+    public string SerializationFormat { get; set; } // Хранение формата
 }

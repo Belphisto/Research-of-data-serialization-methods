@@ -49,6 +49,10 @@
               "target": "Package",
               "version": "[0.104.2, )"
             },
+            "Google.Protobuf": {
+              "target": "Package",
+              "version": "[3.29.3, )"
+            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"

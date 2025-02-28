@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "osJEQtNpOIxehjtJhnSvj8J+X2ofA0D7bjbBVOFNjo+ltqhCRy865c+VIxJWi5LY5dFl4CfEe/HYzlSTADzpgw==",
+  "dgSpecHash": "NKQdGxPI9hwZ2Htoq59oNuTvHX5eakxnSeoYDCQADWQh3A3i0hmEhXKBvDYqT0cxY2oiosP2yimC5oPueYQpjQ==",
   "success": true,
   "projectFilePath": "D:\\GitHub\\susu\\Research-of-data-serialization-methods\\Research-of-data-serialization-methods.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,7 @@
     "C:\\Users\\Elena\\.nuget\\packages\\documentformat.openxml\\3.1.1\\documentformat.openxml.3.1.1.nupkg.sha512",
     "C:\\Users\\Elena\\.nuget\\packages\\documentformat.openxml.framework\\3.1.1\\documentformat.openxml.framework.3.1.1.nupkg.sha512",
     "C:\\Users\\Elena\\.nuget\\packages\\excelnumberformat\\1.1.0\\excelnumberformat.1.1.0.nupkg.sha512",
+    "C:\\Users\\Elena\\.nuget\\packages\\google.protobuf\\3.29.3\\google.protobuf.3.29.3.nupkg.sha512",
     "C:\\Users\\Elena\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\Elena\\.nuget\\packages\\rbush\\4.0.0\\rbush.4.0.0.nupkg.sha512",
     "C:\\Users\\Elena\\.nuget\\packages\\sixlabors.fonts\\1.0.0\\sixlabors.fonts.1.0.0.nupkg.sha512",

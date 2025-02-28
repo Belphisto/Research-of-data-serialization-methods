@@ -17,15 +17,19 @@ public class SerializationTester
 
     public SerializationResult TestSerialization(ISerializableObject obj)
     {
-        var stopWatch = Stopwatch.StartNew();
+        var stopWatch = new Stopwatch();
+        stopWatch.Start();
         var serializedData = _strategy.Serialize(obj);
         stopWatch.Stop();
-        serializedData.SerializationTime = stopWatch.Elapsed;
+        Console.WriteLine(stopWatch.Elapsed);
+        var serializationTime = stopWatch.Elapsed;
+        serializedData.SerializationTime = serializationTime;
 
         stopWatch.Restart();
         _strategy.Deserialize(serializedData.SerializedData, out var result);
         stopWatch.Stop();
         result.DeserializationTime = stopWatch.Elapsed;
+        result.SerializationTime = serializationTime;
 
         result.SerializationFormat = _formatName; // Установка формата сериализации
 
