@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GitHub\\susu\\Research-of-data-serialization-methods\\Research-of-data-serialization-methods.csproj": {}
+    "F:\\Documents\\GitHub\\Research-of-data-serialization-methods\\Research-of-data-serialization-methods.csproj": {}
   },
   "projects": {
-    "D:\\GitHub\\susu\\Research-of-data-serialization-methods\\Research-of-data-serialization-methods.csproj": {
+    "F:\\Documents\\GitHub\\Research-of-data-serialization-methods\\Research-of-data-serialization-methods.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitHub\\susu\\Research-of-data-serialization-methods\\Research-of-data-serialization-methods.csproj",
+        "projectUniqueName": "F:\\Documents\\GitHub\\Research-of-data-serialization-methods\\Research-of-data-serialization-methods.csproj",
         "projectName": "Research-of-data-serialization-methods",
-        "projectPath": "D:\\GitHub\\susu\\Research-of-data-serialization-methods\\Research-of-data-serialization-methods.csproj",
-        "packagesPath": "C:\\Users\\Elena\\.nuget\\packages\\",
-        "outputPath": "D:\\GitHub\\susu\\Research-of-data-serialization-methods\\obj\\",
+        "projectPath": "F:\\Documents\\GitHub\\Research-of-data-serialization-methods\\Research-of-data-serialization-methods.csproj",
+        "packagesPath": "C:\\Users\\elena_blinova\\.nuget\\packages\\",
+        "outputPath": "F:\\Documents\\GitHub\\Research-of-data-serialization-methods\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Elena\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\elena_blinova\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -34,17 +39,16 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Apache.Avro": {
+              "target": "Package",
+              "version": "[1.12.0, )"
+            },
             "ClosedXML": {
               "target": "Package",
               "version": "[0.104.2, )"
@@ -56,6 +60,10 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"
+            },
+            "protobuf-net": {
+              "target": "Package",
+              "version": "[3.2.46, )"
             }
           },
           "imports": [
@@ -74,7 +82,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

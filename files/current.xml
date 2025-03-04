@@ -1,29 +1,28 @@
 <?xml version="1.0" encoding="utf-16"?>
-<SerializableObject>
-  <SerializableObject>
-    <Login>John Doe</Login>
-    <CountInventory>3000</CountInventory>
-    <Coin>1000000.5</Coin>
-    <PartyLogins>
-      <Login>User1</Login>
-      <Login>User2</Login>
-      <Login>User3</Login>
-      <Login>User4</Login>
-      <Login>User5</Login>
-      <Login>User6</Login>
-      <Login>User7</Login>
-      <Login>User8</Login>
-      <Login>User9</Login>
-      <Login>User10</Login>
-      <Login>User11</Login>
-      <Login>User12</Login>
-      <Login>User13</Login>
-      <Login>User14</Login>
-      <Login>User15</Login>
-      <Login>User16</Login>
-      <Login>User17</Login>
-      <Login>User18</Login>
-      <Login>User19</Login>
-      <Login>User20</Login>
-    </PartyLogins>
-  </SerializableObject>
+<SerializableObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Login>John Doe</Login>
+  <CountInventory>3000</CountInventory>
+  <Coin>1000000.5</Coin>
+  <PartyLogins>
+    <Login>User1</Login>
+    <Login>User2</Login>
+    <Login>User3</Login>
+    <Login>User4</Login>
+    <Login>User5</Login>
+    <Login>User6</Login>
+    <Login>User7</Login>
+    <Login>User8</Login>
+    <Login>User9</Login>
+    <Login>User10</Login>
+    <Login>User11</Login>
+    <Login>User12</Login>
+    <Login>User13</Login>
+    <Login>User14</Login>
+    <Login>User15</Login>
+    <Login>User16</Login>
+    <Login>User17</Login>
+    <Login>User18</Login>
+    <Login>User19</Login>
+    <Login>User20</Login>
+  </PartyLogins>
+</SerializableObject>
